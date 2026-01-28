@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viweport" content="width=device-width, initial-scale=1.0">
+        <title>Grading system</title>
+</head>
+<style>
+    body {
+        font-family: sans-serif;
+        padding: 20px;
+    }
+    label {
+        display: block;
+        margin-top: 10px;
+    }
+    input {
+        width: 200px;
+        padding: 5px;
+    }
+    button {
+        margin-top: 15px;
+        padding: 8px 15px;
+    }
+
+</style>
+
+
+
+</head>
+<body>
+
+
+<div class="Grading">
+<h2>Input form</h2>
+
+
+<label>ชื่อนักเรียน</label>
+<input type="text" id="studentName">
+<br>
+<label>รายวิชา</label>
+<input type="text" id="subjectName">
+<br>
+<label>มิดเทอม</label>
+<input type="text" id="Midterm">
+<br>
+<label>ไฟนอล</label>
+<input type="text" id="Final">
+<br>
+<label>การส่งงาน</label>
+<input type="text" id="assignmentScore">
+<br>
+
+<div class="btn-group">
+<button id="btn-calulate">CalculateGrad</button>
+<button onclick="calulateGrade()">คำนวณ</button>
+<button id="btn-clear">Clear</button>
+<button onclick="clearForm()">ลบ</button>
+</div>
+
+<div id="result" class="result"></div>
+
+</div>
+
+<script>
+    function validateScore(score) { //ตรวจสอบคะแนน
+    if (score === "" || isNaN(score) || score < 0 || score > 100) {
+        return false;
+    }
+    return true;
+}
+
+function CalculateGrad() {
+    const name = document.getElementById("studentName").value.trim();
+    const subject = document.getElementById("subjectName").value.trim();
+    const Midterm = document.getElementById("Midterm").value;
+    const Final = document.getElementById("Final").value;
+    const assignmentScore = document.getElementById("assignmentScore").value;
+    const result = document.getElementById("result");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    console.log(validateScore(95));
+
+
+
+</script>
+</body>
+</html>
