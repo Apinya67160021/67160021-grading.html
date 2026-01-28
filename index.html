@@ -22,16 +22,18 @@
         margin-top: 15px;
         padding: 8px 15px;
     }
+    .result {
+        margin-top: 20px;
+        font-weight: bold;
+    }
 
 </style>
-
-
-
 </head>
+
 <body>
 
 
-<div class="Grading">
+
 <h2>Input form</h2>
 
 
@@ -50,20 +52,14 @@
 <label>การส่งงาน
 <input type="number" id="assignmentScore" min="0" max="100"></label>
 <br>
-<label>กดส่ง
-<button type="number" name="assignmentScore" min="0" max="100"></label>
 
-    
-<div class="btn-group">
-<button id="btn-calulate">CalculateGrad</button>
+
 <button onclick="calulateGrade()">คำนวณ</button>
-<button id="btn-clear">Clear</button>
 <button onclick="clearForm()">ลบ</button>
-</div>
+
 
 <div id="result" class="result"></div>
 
-</div>
 
 <script>
     function validateScore(score) { //ตรวจสอบคะแนน
@@ -73,7 +69,7 @@
     return true;
 }
 
-function CalculateGrad() {
+function Calculate() {
     const name = document.getElementById("studentName").value.trim();
     const subject = document.getElementById("subjectName").value.trim();
     const Midterm = document.getElementById("Midterm").value;
@@ -82,7 +78,46 @@ function CalculateGrad() {
     const result = document.getElementById("result");
 }
 
+if (
+    Midterm === "" || final ==="" || assignment === "" ||
+    Midterm < 0 || Midterm > 100 ||
+    final < 0 || final > 100 ||
+    assignment < 0 || assignment > 100
+) {
+    alert("กรอกรคะแนนให้ครบ")
+    return;
+}
 
+//คำนวณ
+
+const tatol =
+Midterm * 0.2 +
+final * 0.5 +
+assignment * 0.3;
+
+let grade = "";
+let status = "";
+
+if (total >= 80){
+    grade = "A";
+    status = "PASS";
+} else if (total >= 70) {
+    grade = "B";
+    status = "PASS";
+} else if (total >= 60){
+    grade = "C";
+    status = "PASS";
+} else if (total >= 50){
+    grade = "D";
+    status = "PASS";
+} else {
+    grade = "D";
+    status = "FAIL";
+}
+
+
+document.getElementById("result").innerHTNL = 
+`ชื่อนักเรียน: ${name}<br>
 
 
 
