@@ -35,22 +35,25 @@
 <h2>Input form</h2>
 
 
-<label>ชื่อนักเรียน</label>
-<input type="text" id="studentName">
+<label>ชื่อนักเรียน
+<input type="text" id="studentName"></label>
 <br>
-<label>รายวิชา</label>
-<input type="text" id="subjectName">
+<label>รายวิชา
+<input type="text" id="subjectName"></label>
 <br>
-<label>มิดเทอม</label>
-<input type="text" id="Midterm">
+<label>มิดเทอม
+<input type="number" id="Midterm" min="0" max="100"></label>
 <br>
-<label>ไฟนอล</label>
-<input type="text" id="Final">
+<label>ไฟนอล
+<input type="number" id="Final" min="0" max="100"></label>
 <br>
-<label>การส่งงาน</label>
-<input type="text" id="assignmentScore">
+<label>การส่งงาน
+<input type="number" id="assignmentScore" min="0" max="100"></label>
 <br>
+<label>กดส่ง
+<button type="number" name="assignmentScore" min="0" max="100"></label>
 
+    
 <div class="btn-group">
 <button id="btn-calulate">CalculateGrad</button>
 <button onclick="calulateGrade()">คำนวณ</button>
